@@ -1,13 +1,17 @@
-var nums = [];
-var target = 0;
-var result = [];
+/* Hash map example from ChatGPT (4o) */
 
-TwoSum(nums, target) {
-  for (var i = 0; i < nums.length; i++) {
-    for (var j = i+1; j < nums.length; j++) {
-      if (nums[i] + nums[j] == target) {
-        result += [nums[i], nums[j]];
+var twoSum = function(nums, target) {
+    let map = new Map();
+    
+    for (let i = 0; i < nums.length; i++) {
+        let complement = target - nums[i];
+        
+        if (map.has(complement)) {
+            return [map.get(complement), i];
+        }
+        
+        map.set(nums[i], i);
     }
-    return result;
-  }
-}
+    
+    return [];
+};
