@@ -12,8 +12,12 @@ You can return the answer in any order.
 
 Input:
 
-'''nums = [2, 7, 11, 15];
-target = 9;'''
+'''
+
+nums = [2, 7, 11, 15];
+target = 9;
+
+'''
 
 ## Example Walkthrough
 
