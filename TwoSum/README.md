@@ -132,4 +132,59 @@ var twoSum = function(nums, target) {
 
 In this optimized solution, each operation (checking the map and adding to the map) is O(1), resulting in a total time complexity of O(n).
 
-I hope this explanation clarifies what O(n²) means. If you have any further questions or would like to proceed to the next problem, let me know!
+### Explanation of `map.get`
+
+In JavaScript, a `Map` is a collection of key-value pairs. The `map.get` method is used to retrieve the value associated with a specific key from the map.
+
+Here's the specific line in your code where `map.get` is used:
+
+```javascript
+return [map.get(complement), i];
+```
+
+### Detailed Explanation
+
+1. **Initialization and Iteration**:
+    ```javascript
+    for (let i = 0; i < nums.length; i++) {
+        let complement = target - nums[i];
+    ```
+    - We are iterating through the `nums` array.
+    - For each element `nums[i]`, we calculate its complement (i.e., the value needed to add up to the `target`).
+
+2. **Checking for the Complement**:
+    ```javascript
+    if (map.has(complement)) {
+    ```
+    - We check if the complement already exists in the map using `map.has(complement)`.
+    - If it exists, it means we have already encountered the element that, when added to `nums[i]`, equals the `target`.
+
+3. **Using `map.get` to Retrieve the Index**:
+    ```javascript
+    return [map.get(complement), i];
+    ```
+    - If the complement is found in the map, `map.get(complement)` retrieves the index of the complement.
+    - `i` is the current index of `nums[i]`.
+
+#### Example Walkthrough
+
+Let's consider an example where `nums = [2, 7, 11, 15]` and `target = 9`:
+
+- **Iteration 1 (i = 0)**:
+    - `nums[i] = 2`
+    - `complement = 9 - 2 = 7`
+    - `map.has(7)` is false (map is empty at this point).
+    - `map.set(2, 0)` adds `{2: 0}` to the map.
+
+- **Iteration 2 (i = 1)**:
+    - `nums[i] = 7`
+    - `complement = 9 - 7 = 2`
+    - `map.has(2)` is true (map has the key `2` with value `0`).
+    - `map.get(2)` retrieves the value `0` (the index of the number `2` in the array).
+    - `return [map.get(complement), i]` returns `[0, 1]`.
+
+### Summary
+- `map.get(key)` retrieves the value associated with the specified `key` from the map.
+- In this context, it retrieves the index of the complement number, which allows us to return the indices of the two numbers that add up to the target.
+
+If you have any further questions or need more clarification, feel free to ask! If you're ready, we can move on to the next problem.
