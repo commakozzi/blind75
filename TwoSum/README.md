@@ -1,58 +1,59 @@
-# Two Sum Problem - JavaScript Solution
+# Two Sum Problem Solution in JavaScript
 
 ## Problem Description
-
-Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+Given an array of integers `nums` and an integer `target`, return the indices of the two numbers such that they add up to `target`.
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 You can return the answer in any order.
 
-## Example:
+## Example
+**Input:** `nums = [2, 7, 11, 15]`, `target = 9`  
+**Output:** `[0, 1]`
 
-Input:
+**Explanation:** Because `nums[0] + nums[1] == 9`, we return `[0, 1]`.
 
+## Solution
+
+### JavaScript Code
+
+```javascript
+function twoSum(nums, target) {
+    let map = new Map();
+    for (let i = 0; i < nums.length; i++) {
+        let complement = target - nums[i];
+        if (map.has(complement)) {
+            return [map.get(complement), i];
+        }
+        map.set(nums[i], i);
+    }
+    return [];
+}
+
+// Example usage:
+const nums = [2, 7, 11, 15];
+const target = 9;
+console.log(twoSum(nums, target)); // Output: [0, 1]
 ```
-nums = [2, 7, 11, 15];
-target = 9;
-```
 
-## Example Walkthrough
+### Explanation
+1. **Initialization:**
+   - Create a new `Map` to store the elements and their indices.
+   
+2. **Iteration:**
+   - Loop through the array `nums`.
+   - Calculate the `complement` which is the difference between the `target` and the current element `nums[i]`.
 
-Given nums = [2, 7, 11, 15] and target = 9:
+3. **Check for Complement:**
+   - If the `map` contains the `complement`, return the indices `[map.get(complement), i]`.
 
-Initial State
+4. **Store in Map:**
+   - If the `complement` is not found, store the current element and its index in the `map`.
 
-	•	nums = [2, 7, 11, 15]
-	•	target = 9
-	•	map = {} (empty initially)
+5. **Return Result:**
+   - The function returns the indices of the two numbers that add up to the `target`.
 
-Iteration 1 (i = 0)
+## Summary
+This solution efficiently finds the indices of the two numbers that add up to the target using a hash map for constant time lookups. The overall time complexity is O(n) where n is the number of elements in the array.
 
-	•	nums[i] = 2
-	•	Calculate complement = 9 - 2 = 7
-	•	Check if 7 is in map: No
-	•	Add 2 to map: map = {2: 0}
-
-Iteration 2 (i = 1)
-
-	•	nums[i] = 7
-	•	Calculate complement = 9 - 7 = 2
-	•	Check if 2 is in map: Yes (found at index 0)
-	•	map.get(2) retrieves the value 0 (the index of the number 2 in the array).
-	•	return [map.get(complement), i] returns [0, 1].
-
-Final Output
-
-The indices of the two numbers that add up to the target are [0, 1].
-
-Summary
-
-	•	map.get(key) retrieves the value associated with the specified key from the map.
-	•	In this context, it retrieves the index of the complement number, which allows us to return the indices of the two numbers that add up to the target.
-
-Time Complexity
-
-The optimized solution has a time complexity of O(n) because it iterates through the array only once.
-
-You can copy and paste this README into your project. If you have any more questions or need further assistance, feel free to ask!
+This method ensures that we do not use the same element twice and returns the correct pair of indices as required by the problem statement.
