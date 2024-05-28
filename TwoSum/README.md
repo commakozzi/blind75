@@ -8,11 +8,14 @@ You may assume that each input would have exactly one solution, and you may not 
 
 You can return the answer in any order.
 
-Example:
+## Example:
 
 Input:
 
-# Example Walkthrough
+'''nums = [2, 7, 11, 15];
+target = 9;'''
+
+## Example Walkthrough
 
 Given nums = [2, 7, 11, 15] and target = 9:
 
