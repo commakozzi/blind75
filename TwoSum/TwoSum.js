@@ -44,12 +44,14 @@ var twoSum = function(nums, target) {
 1st iteration:
 i = 0;
 complement = 9 - 2; (7)
-return 7, 0;
+map.has(complement) = false;
+no return;
 map.set(2, 0);
 
 2nd iteration:
 i = 1;
 complement = 9 - 7; (2)
+map.has(complement) = true;
 return 2, 1;
 map.set(7, 1);
 */
