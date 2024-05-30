@@ -1,4 +1,6 @@
-/* My solution */
+/* ----------------------------------------------------------------------
+My solution
+-------------------------------------------------------------------------*/
 
 var twoSum = function(nums, target) {
     var firstIndex = 0;
@@ -18,7 +20,9 @@ var twoSum = function(nums, target) {
     return result;
 };
 
-/* Hash map example from ChatGPT (4o) */
+/* ----------------------------------------------------------------------
+Hash map example from ChatGPT (4o) 
+-------------------------------------------------------------------------*/
 
 var twoSum = function(nums, target) {
     let map = new Map();
@@ -35,3 +39,16 @@ var twoSum = function(nums, target) {
     
     return [];
 };
+
+/*
+1st iteration:
+i = 0;
+complement = 9 - 2; (7)
+return 7, 0;
+map.set(2, 0);
+
+2nd iteration:
+i = 1;
+complement = 9 - 7; (2)
+return 2, 1;
+map.set(7, 1);
