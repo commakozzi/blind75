@@ -41,6 +41,9 @@ var twoSum = function(nums, target) {
 };
 
 /*
+REMEMBER:  map.set() and map.get() set and get KEY: VALUE pairs!!!
+Note to self:  ALWAYS check the documentation to make sure you really do understand what something does!
+
 1st iteration:
 i = 0;
 complement = 9 - 2; (7)
@@ -52,6 +55,6 @@ map.set(2, 0);
 i = 1;
 complement = 9 - 7; (2)
 map.has(complement) = true;
-return 2, 1;
-map.set(7, 1);
+return [0, 1];
+the above return escapes the function
 */
