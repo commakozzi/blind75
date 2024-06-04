@@ -25,8 +25,8 @@ Example from ChatGPT (4o)
 -------------------------------------------------------------------------*/
 
 var mergeAlternately = function(word1, word2) {
-    let word1Array = word1.split('');
-    let word2Array = word2.split('');
+    let word1Array = word1.split(''); // single or double quotes here are required.
+    let word2Array = word2.split(''); // single or double quotes here are required.
     let resultingArray = [];
     let maxLength = Math.max(word1Array.length, word2Array.length);
 
@@ -39,5 +39,5 @@ var mergeAlternately = function(word1, word2) {
         }
     }
 
-    return resultingArray.join('');
+    return resultingArray.join(''); // single or double quotes here are required.
 }
