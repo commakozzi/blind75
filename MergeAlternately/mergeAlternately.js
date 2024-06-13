@@ -27,6 +27,12 @@ just use the string methods?  I was overthinking this one.
 -------------------------------------------------------------------------*/
 
 var mergeAlternately = function(word1, word2) {
+  
+    /* ------------------------------------------------------------------
+    Create arrays from the words and then create a new array to hold the
+    resulting array.  Loop through the arrays and push the characters to
+    the resulting array.  Finally, join the resulting array and return it.
+    ---------------------------------------------------------------------*/
     let word1Array = word1.split(''); // single or double quotes here are required.
     let word2Array = word2.split(''); // single or double quotes here are required.
     let resultingArray = [];
